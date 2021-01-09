@@ -1,0 +1,36 @@
+h5 {
+  color: #434d56;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.card {
+  width: 99%;
+  padding: 1px;
+  margin: 4.3px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.card:hover {
+  background: rgba(231, 222, 189, 0.8);
+}
+
+.col-2 {
+  padding: 1px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.col-2:hover {
+  background: rgba(231, 222, 189, 0.8);
+}
+
+.smallIcons {
+  display: block;
+  margin: auto;
+}
