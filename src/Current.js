@@ -12,12 +12,12 @@ export default function Search() {
           <h1 id="card-temperature">
             <i class="fas fa-cloud-sun"> </i> 9
             <span class="units">
-              <a href="#" id="celsius">
+              <a href="https://app.netlify.com/sites/quirky-turing-7773bf" id="celsius">
                 {" "}
                 °C
               </a>{" "}
               |
-              <a href="#" id="fahrenheit">
+              <a href="https://app.netlify.com/sites/quirky-turing-7773bf" id="fahrenheit">
                 °F
               </a>{" "}
             </span>{" "}

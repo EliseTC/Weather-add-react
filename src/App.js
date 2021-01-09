@@ -14,7 +14,7 @@ export default function App() {
       </div>
       <footer>
         <small>
-          <a href="https://github.com/EliseTC/Weather-add-react" target="_blank">
+          <a href="https://github.com/EliseTC/Weather-add-react" >
             Open-source code
           </a>{" "}
           by Elisabeth ten Cate
