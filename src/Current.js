@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./Current.css";
+import FormattedDate from "./FormattedDate";
 
 
 export default function Current() {
@@ -15,8 +16,7 @@ export default function Current() {
       city: response.data.name,
       description: response. data.weather[0].description,
       iconUrl: "http://openweathermap.org/img/wn/04d@2x.png",
-      date: "Sunday 15 November 2020",
-      time: "16:50"
+      date: new Date(response.data.dt *1000)
     });
     setReady(true);
   }
@@ -28,7 +28,7 @@ export default function Current() {
         <div class="card-body">
           <br/>
           <h2 id="card-city">{weatherData.city}</h2>
-          <h5 class="today">{weatherData.date}, {weatherData.time}</h5>
+          <h5 class="today"><FormattedDate date={weatherData.date}/></h5>
           <h1 id="card-temperature">
             <img
             src={weatherData.iconUrl}/> {Math.round(weatherData.temperature)}
@@ -59,6 +59,6 @@ export default function Current() {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
 
-  return "loading";
+  return "Loading...";
   }
 }
