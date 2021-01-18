@@ -85,3 +85,8 @@ a:hover {
   color: #434d56;
   font-weight: bold;
 }
+.searchCity {
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+}
