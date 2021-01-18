@@ -13,7 +13,7 @@ export default function Current() {
       humidity: response.data.main.humidity,
       city: response.data.name,
       description: response.data.weather[0].description,
-      iconUrl: "http://openweathermap.org/img/wn/04d@2x.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt *1000)
     });
     setReady(true);
@@ -42,14 +42,14 @@ if (ready) {
           </h1>
            <p class="description">{" "}
       <span id="description">{weatherData.description}  </span> | Humidity:{" "}
-      <span id="humidity"> {weatherData.humidity}</span>% | Wind: <span id="wind">{Math.round(weatherData.wind)}-</span>km/h{" "}
+      <span id="humidity"> {weatherData.humidity}</span>% | Wind: <span id="wind">{Math.round(weatherData.wind)}</span>km/h{" "}
     </p>
         </div>
       </div>
     </div>
   );
 } else {
-  let city = "London"  
+  let city = "Las Vegas"  
   let apiKey = "b19a3f432de5f615851032aa1c827b12";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
