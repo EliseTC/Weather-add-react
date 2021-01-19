@@ -76,7 +76,7 @@ if (weatherData.ready) {
   </div>
   );
 } else {
-  searchCity ();
+  searchCity();
   return "Loading...";
   }
 }
