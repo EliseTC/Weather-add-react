@@ -4,6 +4,7 @@ import "./Current.css";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature"; 
 import Geolocation from "./Geolocation";
+import Forecast from "./Forecast";
 
   
 export default function Current(props) {
@@ -39,7 +40,7 @@ function handleCityChange(event) {
 
 if (weatherData.ready) {
   return (
-     <div>
+     <div>      
       <div class="row">
       <div class="col-6">
         <form id="find-city" onSubmit={handleSubmit}>
@@ -64,8 +65,8 @@ if (weatherData.ready) {
           <br/>
           <h2 id="card-city">{weatherData.city}</h2>
           <h5 class="today"><FormattedDate date={weatherData.date}/></h5>
-           <img
-            src={weatherData.iconUrl} alt="weather icon"/><WeatherTemperature celsius={weatherData.temperature}/> 
+           <span> <WeatherTemperature celsius={weatherData.temperature} icon={weatherData.iconUrl}/> </span>
+        
            <p class="description">{" "}
       <span id="description">{weatherData.description}  </span> | Humidity:{" "}
       <span id="humidity"> {weatherData.humidity}</span>% | Wind: <span id="wind">{Math.round(weatherData.wind)}</span>km/h{" "}
@@ -73,8 +74,10 @@ if (weatherData.ready) {
         </div>
       </div>
     </div>
+    <Forecast city={weatherData.city}/>
   </div>
   );
+  
 } else {
   searchCity();
   return "Loading...";
