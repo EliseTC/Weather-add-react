@@ -7,7 +7,7 @@ export default function ForecastPreview (props){
         <h5>{new Date(props.data.dt*1000).getHours()}:00 </h5>
         <h1>
          <img
-            src={props.data.weather[0].icon} alt="weather icon"/> 
+            src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} alt="weather icon"/> 
         </h1>
         <h5>{Math.round(props.data.main.temp_max)}° | {Math.round(props.data.main.temp_min)}°</h5>
       </div>
