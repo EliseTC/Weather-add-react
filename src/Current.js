@@ -3,7 +3,6 @@ import axios from "axios";
 import "./Current.css";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature"; 
-import Geolocation from "./Geolocation";
 import Forecast from "./Forecast";
 
 
@@ -39,6 +38,22 @@ function handleCityChange(event) {
   searchCity(city);
 }
 
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(current);
+}
+
+
+function current(position) {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+    const apiKey = "b19a3f432de5f615851032aa1c827b12";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+
 if (weatherData.ready) {
   return (
      <div>      
@@ -56,7 +71,13 @@ if (weatherData.ready) {
           </div>
         </form>
       </div>
-      <Geolocation />
+      <div class="col-6">
+      <div class="geoLocation">
+        <button class="currentLocation" onClick={getCurrentLocation}> 
+          <i class="fas fa-map-marked-alt"></i>
+        </button>
+      </div>
+    </div>
       <br />
       <br />
     </div>

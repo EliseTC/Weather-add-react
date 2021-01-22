@@ -9,7 +9,6 @@ export default function App() {
     <div className="App">
       <div class="container">
        <Current defaultCity="London"/>
-       
      </div>
       <footer>
         <small>
