@@ -31,11 +31,12 @@ export default function Current(props) {
 
   function handleSubmit(event){
   event.preventDefault ();
+  searchCity(city);
 }
 
 function handleCityChange(event) {
   setCity(event.target.value);
-  searchCity(city);
+  
 }
 
 
